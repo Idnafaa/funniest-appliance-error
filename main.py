@@ -18,6 +18,7 @@ def main():
     # Exactly one line: no trailing newline, no extra whitespace.
     text = ERROR_LINE.strip()
     assert "\n" not in text, "entry must be a single line"
+    assert text.startswith("Error "), "entry must read as an error message"
     assert 1 <= len(text) <= 200, f"entry is {len(text)} chars"
     outdir = "/output"
     os.makedirs(outdir, exist_ok=True)
